@@ -1,7 +1,24 @@
-import Image from 'next/image'
+'use client'
 
-export default function Home() {
+import React from 'react'
+import { CurrentWeather as CurrentWeatherType } from './models/wheather'
+import CurrentWeather from './components/CurrentWeather'
+
+const home: React.FC = () => {
+  const sampleCurrentWeather: CurrentWeatherType = {
+    city: "Oslo",
+    country: "No",
+    temperature: 10,
+    description: "clear sky",
+    icon: "01d"
+  }
   return (
-    <h1>home</h1>
+    <div>
+      <CurrentWeather currentWeather={sampleCurrentWeather} />
+    </div>
   )
 }
+
+export default home
+
+
